@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<div class="nav">
+	<ul>
+	{% for article in articles %}
+		<li><a href="#{{article.slug}}">{{article.title|safe}}</a></li>
+
+	{%endfor%}
+	</ul>		
+</div>
+
+{% for article in articles %}<article id="{{article.slug}}" class="project articles"><span class="halfPage">
+	{% with forloop.first as firstloop %}
+	<div class="page-content">
+		<h1>{{article.title|safe}}</h1>
+		<p>{{article.text.0.text|safe}}</p>
+	</div>
+	</span>{% for img in article.image %}<span class="page" >
+		<div class="image background-image clickformog {% if not firstloop %}lazy {% endif %}" data-original="{{ MEDIA_URL }}{{img.title}}" {% if firstloop %} style="background-image: url('{{ MEDIA_URL }}{{img.title}}')"{% endif %}> 
+			{% if img.link %}
+				<a href="{{img.link}}"></a>
+				<span><span><img src="{% static "img/play.png"%}"></span></span>
+			{% endif %}
+		</div>
+	</span>{% endfor %}</article>
+	{% endwith %}
+
+{% endfor %}

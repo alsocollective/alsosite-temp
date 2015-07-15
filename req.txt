@@ -1,0 +1,4 @@
+Django==1.6
+django-brutebuster==0.1.8
+easy-thumbnails==2.2
+Pillow==2.7.0
