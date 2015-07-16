@@ -4,14 +4,14 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'application/static/css/simple-style.css': 'application/static/css/newMain.scss'
+					'application/static/css/style.css': 'application/static/scss/style.scss'
 				}
 			}
 		},
 		cssmin: {
 			combine: {
 				files: {
-					'application/static/css/style.css': ['application/static/css/normalize.min.css', 'application/static/css/simple-style.css']
+					'application/static/css/style.min.css': ['application/static/css/normalize.min.css', 'application/static/css/style.css']
 				}
 			}
 		},
@@ -19,9 +19,9 @@ module.exports = function(grunt) {
 			js: {
 				files: {
 					'application/static/js/main.min.js': [
-						'application/static/js/dragdivscroll-ck.js',
-						'application/static/js/jquery.js',
-						'application/static/js/jquery.lazyload.min.js',
+						'application/static/js/lib/jquery.min.js',
+						'application/static/js/lib/jquery.lazyload.min.js',
+						'application/static/js/lib/jquery.smoothState.js',
 						'application/static/js/main.js',
 					]
 				}
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 				tasks: ['sass', 'cssmin']
 			},
 			js: {
-				files: 'application/static/js/*.js',
+				files: ['application/static/js/*.js', "!application/static/js/main.min.js"],
 				tasks: ['uglify']
 			}
 		}

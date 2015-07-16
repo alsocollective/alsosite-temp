@@ -1,4 +1,7 @@
 Django==1.6
+Pillow==2.7.0
 django-brutebuster==0.1.8
 easy-thumbnails==2.2
-Pillow==2.7.0
+pysqlite==2.6.3
+requests==2.7.0
+wsgiref==0.1.2
