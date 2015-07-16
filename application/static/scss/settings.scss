@@ -1,0 +1,62 @@
+
+
+$small: 480px;
+$medium: 670px;
+$inbetween: 900px;
+$large: 1120px;
+$min: min-width;
+$max: max-width;
+
+$blue: #33ccff;
+$yellow: #e6dc5a;
+$pink: #ff3399;
+$purp: #9933ff;
+
+$width: 90%;
+$indsideWidth: 1200px;
+$min-width:500px;
+
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+	@if $constraint == $min {
+		@media screen and ($min: $viewport1) {
+			@content;
+		}
+	} @else if $constraint == $max {
+		@media screen and ($max: $viewport1) {
+			@content;
+		}
+	} @else if $constraint == $retina {
+		@media only screen and ($retinaWebKit: $viewport1), only screen and ($retina: $viewport1) {
+			@content;
+		}
+	} @else {
+		@media screen and ($min: $viewport1) and ($max: $viewport2) {
+			@content;
+		}
+	}
+}
+@mixin vendorize($name, $argument) {
+	-webkit-#{$name}: #{$argument};
+	-ms-#{$name}: #{$argument};
+	-moz-#{$name}: #{$argument};
+	-o-#{$name}: #{$argument};
+	#{$name}: #{$argument};
+}
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+}
