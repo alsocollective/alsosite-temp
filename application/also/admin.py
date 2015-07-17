@@ -4,7 +4,7 @@ from also.models import ImageNode, TextNode, Category, Article, InstaPost, Post,
 
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ('title','selected','project_type','short_description','main_image','image', 'date','showCat')
+	list_display = ('title','selected','project_type','short_description','main_image','image','text' ,'date','showCat')
 	list_editable = ('selected','date','project_type','short_description','main_image',)
 	filter_horizontal = ('textFields','imageFields','instagramFields',)
 	readonly_fields = ('image',)
@@ -17,8 +17,6 @@ class ArticleAdmin(admin.ModelAdmin):
 			'fields':('instagramFields','slug',)
 			}),
 	]
-
-
 
 class Image(admin.ModelAdmin):
 	list_display = ('title', 'order','admin_image','admin_video')

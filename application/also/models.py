@@ -129,6 +129,14 @@ class Article(models.Model):
 		return "no image selected"
 	image.allow_tags = True
 
+	def text(self):
+		try:
+			return self.textFields.all()[0].textField
+		except Exception, e:
+			return str(e)
+	# text.allow_tags = True
+		# TextNode.objects.all().filter()
+
 	project_type = models.TextField(max_length=4000,blank=True,null=True)
 	short_description = models.TextField(max_length=4000,blank=True,null=True)
 	main_image = models.ForeignKey(ImageNode,blank=True,null=True)
