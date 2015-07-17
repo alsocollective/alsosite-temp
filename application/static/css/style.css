@@ -274,9 +274,12 @@ li {
       background-color: #fff; }
       .archivelist table tr:hover a {
         color: #333333; }
-    .archivelist table tr:first-child:hover {
+    .archivelist table tr.spacer:hover {
       background-color: transparent; }
-    .archivelist table th {
+    .archivelist table .spacer th {
+      padding: 100px 0;
+      padding: 10vh 0; }
+    .archivelist table tr:first-child th {
       padding: 200px 0;
       padding: 32vh 0; }
     .archivelist table tr {

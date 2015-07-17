@@ -19,7 +19,17 @@
 			</ul><div class="relative">
 				<div style="background-image:url({{MEDIA_URL}}{{work.0.main_image}})" class="backgroundimage"></div>
 				<table cellspacing="0px"  rowspacing="0px">
-					<tr>
+					<tr class="spacer">
+						<th></th><th></th><th></th>
+					</tr>
+					{% for project in  selected%}
+					<tr data-img="{{MEDIA_URL}}{{project.main_image}}">
+						<td><a href="/archive/{{project.slug}}">{{project.title|safe}}</a></td>
+						<td><a href="/archive/{{project.slug}}">{{project.project_type|safe}}</a></td>
+						<td><a href="/archive/{{project.slug}}">{{project.short_description|safe}}</a></td>
+					</tr>
+					{% endfor %}
+					<tr class="spacer">
 						<th></th><th></th><th></th>
 					</tr>
 					{% for project in work%}
