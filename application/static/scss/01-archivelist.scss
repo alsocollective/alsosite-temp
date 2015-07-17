@@ -64,8 +64,11 @@
 		width: 100%;
 		text-align: left;
 		background-color: $backgroundOverlay;//rgba(0,0,0,0.75);
+		letter-spacing: .045em;
+		transition: background-color 0.25s;
 		tr:hover{
 			background-color: #fff;
+			transition: background-color 0.25s;
 			a{
 				color: $black;
 			}
@@ -76,6 +79,11 @@
 		.spacer th{
 			padding: 100px 0;
 			padding: 10vh 0;
+			h1{
+				color: $white;
+				text-align: center;
+				text-transform: capitalize;
+			}
 		}
 		tr:first-child{
 			th{

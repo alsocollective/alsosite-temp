@@ -10,7 +10,10 @@ body,html{
 	font-weight:600; 
 	font-style:normal;
 	text-align: center;
-	@include vendorize(-webkit-font-smoothing,antialiased);	
+	//@include vendorize(-webkit-font-smoothing,antialiased);
+	@include antialias;
+	@include font-size(16px);
+
 	background-color: #000;
 	color: $black;
 }
@@ -23,8 +26,8 @@ h1{
 	// display: inline-block;
 }
 p{
-	width: 70%;
-	max-width: 600px;
+	width: 80%;
+	max-width: 800px;
 	min-width: 300px;
 	text-align: left;
 	margin: 0 auto;

@@ -13,7 +13,7 @@ $yellow: #e6dc5a;
 $pink: #ff3399;
 $purp: #9933ff;
 $white: #fff;
-$backgroundOverlay: rgba(0,0,0,0.75);
+$backgroundOverlay: rgba(0,0,0,0.65);
 
 $width: 90%;
 $indsideWidth: 1200px;
@@ -38,6 +38,26 @@ $min-width:500px;
 		}
 	}
 }
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin antialias {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
 @mixin transition($transition-property, $transition-time, $method) {
 	-webkit-transition: $transition-property $transition-time $method;
 	-moz-transition: $transition-property $transition-time $method;
@@ -70,3 +90,4 @@ $min-width:500px;
 @mixin animation($str) {
 	-webkit-animation: #{$str};
 }
+
