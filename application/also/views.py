@@ -11,25 +11,7 @@ import random, time, json, requests
 from settings import MEDIA_URL
 
 ##functions
-def home(request):
-	return HttpResponse("ALSO COLLECTIVE")
-def getTexts(listin):
-	textList = []
-	for text in listin:
-		textObj = {"text":text.textField,"title":text.title}
-		for image in text.backgroundImage.all():
-			textObj.update({"bkImage":image.title})
-		textList.append(textObj)
-	return textList
 
-def getImages(listin):
-	imageList = []
-	for image in listin:
-		imageObj = {"title":image.title}
-		if image.video:
-			imageObj.update({"link":image.video})
-		imageList.append(imageObj)
-	return imageList
 
 # def getInstagram(listin):
 # 	instaList = []
@@ -317,7 +299,26 @@ def getImages(listin):
 # 	return render_to_response('index-other.html',{'allContent':allContent})
 
 
+def home(request):
+	return render_to_response("index.html",{"MEDIA_URL":settings.MEDIA_URL})
 
+def getTexts(listin):
+	textList = []
+	for text in listin:
+		textObj = {"text":text.textField,"title":text.title}
+		for image in text.backgroundImage.all():
+			textObj.update({"bkImage":image.title})
+		textList.append(textObj)
+	return textList
+
+def getImages(listin):
+	imageList = []
+	for image in listin:
+		imageObj = {"title":image.title}
+		if image.video:
+			imageObj.update({"link":image.video})
+		imageList.append(imageObj)
+	return imageList
 
 def simplework(request,project = None):
 	if(project == None):
@@ -337,16 +338,12 @@ def simplework(request,project = None):
 
 def simpleworklist(request):
 	categories = Category.objects.all()
-	archive = categories.filter(slug = "archive")
 	work = categories.filter(slug = "work")
 
-	articles = Article.objects.all().order_by('-date').filter(category = work )
+	work = Article.objects.all().order_by('-date').filter(category=work)
+	selected = Article.objects.all().order_by('-date').filter(selected=True)
 
-	archivelist = Article.objects.all().order_by('-date').filter(category = archive )
-
-	current = [{"title":"thisTitle","link":"thisLink"}]
-
-	return render_to_response("archivelist.html",{"current":articles,"archived":archivelist,"MEDIA_URL":settings.MEDIA_URL})
+	return render_to_response("archivelist.html",{"work":work,"selected":selected,"MEDIA_URL":settings.MEDIA_URL})
 
 def sitemap(request):
 	categories = Category.objects.all()	

@@ -11,17 +11,26 @@
 <body>
 	<div id="wrapper" class="animation">
 		<div class="archivelist">
-			<h1>ALSO Collective</h1>
-
-
-			<h2>Projects On Display</h2>
-			<ul>
-				{% for project in  current%}<li><a href="/archive/{{project.slug}}">{{project.title|safe}}</a></li>{% endfor %}
-			</ul>
-			<h2>Archived Projects</h2>
-			<ul>
-				{% for project in  archived%}<li><a href="/archive/{{project.slug}}">{{project.title|safe}}</a></li>{% endfor %}
-			</ul>
+			<h1 class="hidden">ALSO Collective</h1>
+			<ul class="selected hidden">
+				{% for project in  selected%}<li style="background-image:url({{MEDIA_URL}}{{project.main_image}})" class="backgroundimage">
+					<a href="/archive/{{project.slug}}">{{project.title|safe}}</a>
+				</li>{% endfor %}
+			</ul><div class="relative">
+				<div style="background-image:url({{MEDIA_URL}}{{work.0.main_image}})" class="backgroundimage"></div>
+				<table cellspacing="0px"  rowspacing="0px">
+					<tr>
+						<th></th><th></th><th></th>
+					</tr>
+					{% for project in work%}
+					<tr data-img="{{MEDIA_URL}}{{project.main_image}}">
+						<td><a href="/archive/{{project.slug}}">{{project.title|safe}}</a></td>
+						<td><a href="/archive/{{project.slug}}">{{project.project_type|safe}}</a></td>
+						<td><a href="/archive/{{project.slug}}">{{project.short_description|safe}}</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="{% static "js/main.min.js" %}"></script>

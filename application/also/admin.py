@@ -1,27 +1,23 @@
 from django.contrib import admin
 from also.models import ImageNode, TextNode, Category, Article, InstaPost, Post, Day
 
-# class ProjectAdmin(admin.ModelAdmin):
-# 	fields = ['title','content']
 
-# class CategoryAdmin(admin.ModelAdmin):
-# 	fieldsets = [
-# 		('title',{'fields':['title']}),
-# 		('content',{'fields':['projects','pages']}),
-# 	]
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ('title', 'date','showCat')
-	list_editable = ('date',)
+	list_display = ('title','selected','project_type','short_description','main_image','image', 'date','showCat')
+	list_editable = ('selected','date','project_type','short_description','main_image',)
 	filter_horizontal = ('textFields','imageFields','instagramFields',)
+	readonly_fields = ('image',)
+
 
 	fieldsets = [
-		(None,{'fields':['title','category','date','textFields','imageFields']}),
+		(None,{'fields':['title','project_type','short_description',('main_image','image'),'category','date','textFields','imageFields']}),
 		('Advance options', {
 			'classes':('collapse',),
 			'fields':('instagramFields','slug',)
 			}),
 	]
+
 
 
 class Image(admin.ModelAdmin):

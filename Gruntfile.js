@@ -22,6 +22,7 @@ module.exports = function(grunt) {
 						'application/static/js/lib/jquery.min.js',
 						'application/static/js/lib/jquery.lazyload.min.js',
 						'application/static/js/lib/jquery.smoothState.js',
+						'application/static/js/lib/slick.min.js',
 						'application/static/js/main.js',
 					]
 				}

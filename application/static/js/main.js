@@ -6,6 +6,12 @@ var app = {
 	softInit: function() {
 		if ($(".archiveitem").length) {
 			app.aItem.init();
+		} else if ($(".archivelist").length) {
+			app.mouseOverImage.init()
+		} else if ($(".index").length) {
+			console.log("index");
+			app.indexCarosel();
+
 		}
 	},
 	smooth: {
@@ -80,6 +86,30 @@ var app = {
 		remove: function() {
 			this.parentNode.removeChild(this);
 		}
+	},
+	mouseOverImage: {
+		target: null,
+		init: function() {
+			console.log("set up");
+			app.mouseOverImage.target = $(".relative .backgroundimage");
+			$("tr").mouseover(app.mouseOverImage.Event);
+		},
+		Event: function(event) {
+			var newImage = $(this).data("img")
+			if (newImage && newImage.indexOf("None") < 0) {
+				console.log($(this).data("img"));
+				app.mouseOverImage.target.css("background-image", "url(" + newImage + ")");
+			}
+		}
+	},
+	indexCarosel: function() {
+		console.log("slaccck")
+		$("#carosole").slick({
+			autoplay: true,
+			fade: true,
+			autoplaySpeed: 8000,
+			arrows: false
+		});
 	}
 }
 app.init();

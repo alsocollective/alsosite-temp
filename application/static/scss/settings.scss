@@ -7,10 +7,13 @@ $large: 1120px;
 $min: min-width;
 $max: max-width;
 
+$black: #333;
 $blue: #33ccff;
 $yellow: #e6dc5a;
 $pink: #ff3399;
 $purp: #9933ff;
+$white: #fff;
+$backgroundOverlay: rgba(0,0,0,0.75);
 
 $width: 90%;
 $indsideWidth: 1200px;
@@ -34,6 +37,13 @@ $min-width:500px;
 			@content;
 		}
 	}
+}
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
 }
 @mixin vendorize($name, $argument) {
 	-webkit-#{$name}: #{$argument};

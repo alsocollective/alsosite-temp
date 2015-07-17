@@ -1,7 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-import os
-import os.path
+import os, os.path
+from settings import MEDIA_URL
 
 def touch(path):
     with open(path, 'a'):
@@ -22,7 +22,7 @@ class ImageNode(models.Model):
 
 
 		# return '/srv/www/also-static.com/static/alsocollective/upload/%s.%s' % (slug, extension)
-		return '/srv/www/alsocollective.com/public_html/alsocollective/static/img/uploaded/%s.%s' % (slug, extension)
+		return '/srv/www/alsocollective.com/public_html/media/uploaded/%s.%s' % (slug, extension)
 		# return '/srv/www/alsocollective.com/public_html/alsocollectivedev/alsocollective/static/upload/%s.%s' % (slug, extension)
 
 
@@ -122,6 +122,19 @@ class Article(models.Model):
 		return self.title
 
 	date = models.DateField(auto_now=False)
+
+	def image(self):
+		if self.main_image:
+			return '<img style="width:200px;height:auto;" src="%s%s"/>' % (MEDIA_URL,str(self.main_image))
+		return "no image selected"
+	image.allow_tags = True
+
+	project_type = models.TextField(max_length=4000,blank=True,null=True)
+	short_description = models.TextField(max_length=4000,blank=True,null=True)
+	main_image = models.ForeignKey(ImageNode,blank=True,null=True)
+	selected = models.BooleanField(blank = True, default=False)
+
+
 postTypes = (
 	('tweet','tweet'),
 	('article','article'),
