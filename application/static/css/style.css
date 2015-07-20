@@ -276,6 +276,7 @@ body, html {
         color: white;
         text-align: center;
         text-transform: capitalize;
+        font-weight: bolder;
         font-size: 32px;
         font-size: 2rem; }
     .archivelist table tr:first-child th {
