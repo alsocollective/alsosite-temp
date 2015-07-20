@@ -1,0 +1,30 @@
+{% if staff %}
+	<div id="metaAdminPannel">
+		<a href="/admin/also/imagenode/?o=-3" target="_blank">edit home page</a> | 
+		<a href="/admin/also/article/" target="_blank">edit list</a> | 
+		{% if current %}
+			<a href="/admin/also/article/{{current.pk}}" target="_blank">edit project</a> | 
+		{% endif %}
+		<a href="#" onclick="exitadminpannel()">close</a>
+	</div>
+
+	<script type="text/javascript">
+		function exitadminpannel(){
+			var el = document.getElementById("metaAdminPannel")
+			el.parentNode.removeChild(el);
+		}
+	</script>
+	<style type="text/css">
+		#metaAdminPannel{
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #000;
+			z-index: 99;
+		}
+		#metaAdminPannel a{
+			color: #fff;
+		}
+
+	</style>
+{% endif %}
