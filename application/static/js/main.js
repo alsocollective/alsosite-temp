@@ -95,11 +95,27 @@ var app = {
 			$("tr").mouseover(app.mouseOverImage.Event);
 		},
 		Event: function(event) {
-			var newImage = $(this).data("img")
+			app.mouseOverImage.createLoadingElement(this);
+
+			// var newImage = $(this).data("img")
+			// if (newImage && newImage.indexOf("None") < 0) {
+			// 	console.log($(this).data("img"));
+			// 	app.mouseOverImage.target.css("background-image", "url(" + newImage + ")");
+			// }
+		},
+		createLoadingElement: function(element) {
+			var newImage = $(element).data("img")
 			if (newImage && newImage.indexOf("None") < 0) {
-				console.log($(this).data("img"));
-				app.mouseOverImage.target.css("background-image", "url(" + newImage + ")");
+				newImg = $(document.createElement("img"));
+				newImg.addClass("offscreen");
+				newImg.attr("src", newImage);
+				app.mouseOverImage.loading = newImg;
+				newImg.bind('load', app.mouseOverImage.setImage);
 			}
+		},
+		setImage: function() {
+			app.mouseOverImage.target.css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
+			app.mouseOverImage.loading.attr("src", "");
 		}
 	},
 	indexCarosel: function() {

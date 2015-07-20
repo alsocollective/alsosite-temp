@@ -200,7 +200,10 @@ body, html {
   max-width: 100%;
   overflow: hidden; }
   .archivelist svg {
-    height: 120px; }
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 4em; }
   .archivelist ul {
     width: 100%;
     text-align: left;
@@ -254,6 +257,18 @@ body, html {
     text-align: left;
     background-color: rgba(0, 0, 0, 0.65);
     letter-spacing: .045em; }
+    .archivelist table tr {
+      -webkit-transition: background-color 0.35s ease-in-out;
+      -moz-transition: background-color 0.35s ease-in-out;
+      -ms-transition: background-color 0.35s ease-in-out;
+      -o-transition: background-color 0.35s ease-in-out;
+      transition: background-color 0.35s ease-in-out; }
+      .archivelist table tr a {
+        -webkit-transition: color 0.35s ease-in-out;
+        -moz-transition: color 0.35s ease-in-out;
+        -ms-transition: color 0.35s ease-in-out;
+        -o-transition: color 0.35s ease-in-out;
+        transition: color 0.35s ease-in-out; }
     .archivelist table tr:hover {
       background-color: #fff;
       transition: background-color 0.25s; }
@@ -352,6 +367,10 @@ body, html {
     text-decoration: underline; }
     .archiveitem a:hover {
       color: #9933ff; }
+  .archiveitem .offscreen {
+    position: absolute;
+    right: 9000;
+    top: 0; }
 
 .index {
   width: 100%;
