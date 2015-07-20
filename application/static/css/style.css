@@ -262,9 +262,20 @@ body, html {
     text-align: left;
     background-color: rgba(0, 0, 0, 0.65);
     letter-spacing: .045em; }
+    .archivelist table td {
+      position: relative; }
+      .archivelist table td .editor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        background-color: #000;
+        padding: 0; }
+        .archivelist table td .editor:hover {
+          color: #fff; }
     .archivelist table tr:hover {
-      background-color: #fff;
-      transition: background-color 0.25s; }
+      background-color: #fff; }
       .archivelist table tr:hover a {
         color: #333333; }
     .archivelist table tr.spacer:hover {
@@ -283,8 +294,7 @@ body, html {
       padding: 200px 0;
       padding: 20vh 0; }
     .archivelist table tr {
-      border-bottom: 2px solid #fff;
-      transition: background-color 0.25s; }
+      border-bottom: 2px solid #fff; }
     .archivelist table td {
       vertical-align: top;
       width: 25%; }

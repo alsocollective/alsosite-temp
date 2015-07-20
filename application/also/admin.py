@@ -4,14 +4,16 @@ from also.models import ImageNode, TextNode, Category, Article, InstaPost, Post,
 
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ('title','selected','project_type','short_description','main_image','image','text' ,'date','showCat')
-	list_editable = ('selected','date','project_type','short_description','main_image',)
+	list_display = ('title','selected','order','project_type','short_description','main_image','image','text','showCat')
+	list_editable = ('selected','order','project_type','short_description','main_image',)
 	filter_horizontal = ('textFields','imageFields','instagramFields',)
 	readonly_fields = ('image',)
+	# ordering = ('title',)
+
 
 
 	fieldsets = [
-		(None,{'fields':['title','project_type','short_description',('main_image','image'),'category','date','textFields','imageFields']}),
+		(None,{'fields':[('title','selected','order'),'project_type','short_description',('main_image','image'),'category','date','textFields','imageFields']}),
 		('Advance options', {
 			'classes':('collapse',),
 			'fields':('instagramFields','slug',)
@@ -19,8 +21,9 @@ class ArticleAdmin(admin.ModelAdmin):
 	]
 
 class Image(admin.ModelAdmin):
-	list_display = ('title', 'order','admin_image','admin_video')
-	list_editable = ('order',)
+	list_display = ('title', 'order','homepage','admin_image','admin_video')
+	list_editable = ('order','homepage',)
+	# ordering = ('title',)
 	fieldsets = [
 		(None,{'fields':['location','video','url','order']}),
 		('Advance options', {

@@ -300,7 +300,11 @@ from settings import MEDIA_URL
 
 
 def home(request):
-	return render_to_response("index.html",{"MEDIA_URL":settings.MEDIA_URL})
+	return render_to_response("index.html",{
+		"images":ImageNode.objects.all().filter(homepage__gt = 0),
+		"MEDIA_URL":settings.MEDIA_URL,
+		"staff":request.user.is_staff
+		})
 
 def getTexts(listin):
 	textList = []
@@ -324,17 +328,17 @@ def simplework(request,project = None):
 	if(project == None):
 		return False
 	if project:
-		pro = Article.objects.all().order_by('-date').filter(slug = project)[0]
-		print project
+		pro = Article.objects.all().order_by('order').filter(slug = project)[0]
 		current = {
 					"title":pro.title,"slug":pro.slug,
 					"text":getTexts(pro.textFields.all().order_by('-date')),
-					"image":getImages(pro.imageFields.all().order_by('order'))
+					"image":getImages(pro.imageFields.all().order_by('order')),
+					"pk":pro.pk
 					}
 	else:
 		current = False
 
-	return render_to_response("simpleTemplate.html",{"current":current,"MEDIA_URL":settings.MEDIA_URL})
+	return render_to_response("simpleTemplate.html",{"current":current,"MEDIA_URL":settings.MEDIA_URL,"staff":request.user.is_staff})
 
 def simpleworklist(request):
 	categories = Category.objects.all()
@@ -343,7 +347,7 @@ def simpleworklist(request):
 	work = Article.objects.all().order_by('-date').filter(category=work)
 	selected = Article.objects.all().order_by('-date').filter(selected=True)
 
-	return render_to_response("archivelist.html",{"work":work,"selected":selected,"MEDIA_URL":settings.MEDIA_URL})
+	return render_to_response("archivelist.html",{"work":work,"selected":selected,"MEDIA_URL":settings.MEDIA_URL,"staff":request.user.is_staff})
 
 def sitemap(request):
 	categories = Category.objects.all()	

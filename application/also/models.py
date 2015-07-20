@@ -10,6 +10,9 @@ def touch(path):
 class ImageNode(models.Model):
 	description = models.CharField(max_length=300, blank=True)
 
+	homepage =  models.IntegerField(blank=True,default=0)
+	order = models.IntegerField(blank=True,default=99)
+
 	def slugify_filename(instance, filename):
 		fname, dot, extension = filename.rpartition('.')
 		slug = slugify(fname)
@@ -39,7 +42,7 @@ class ImageNode(models.Model):
 	video = models.URLField(max_length=1000, blank=True);
 	url = models.URLField(max_length=1000, blank=True);
 	date = models.DateField(auto_now=False,blank=True,null=True)
-	order = models.IntegerField(blank=True,default=0)
+	order = models.IntegerField(blank=True,default=99)
 
 	def save(self, *args, **kwargs):
 		self.title = os.path.basename(self.location.name)

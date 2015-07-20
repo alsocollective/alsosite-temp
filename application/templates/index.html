@@ -10,13 +10,9 @@
 	<div id="wrapper" class="animation">
 		<div class="index">
 			<div id="carosole">
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/aip01.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/fotwg1.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/gex01.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/kayapo3.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/pshop06.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/sda02.jpg)'></div></div>
-				<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/sig03.jpg)'></div></div>
+				{% for img in images %}
+					<div><div class="indeximage" style='background-image:url({{MEDIA_URL}}/{{img}})'></div></div>
+				{% endfor %}
 			</div>
 			<div id="content">
 				<div class="table"><div>
@@ -41,6 +37,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="{% static "js/main.min.js" %}"></script>
+	{% include "footer.html" %}
 </body>
 
 <script>

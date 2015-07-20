@@ -27,7 +27,7 @@
 					<tr data-img="{{MEDIA_URL}}{{project.main_image}}">
 						<td><a href="/archive/{{project.slug}}">{{project.title|safe}}</a></td>
 						<td><a href="/archive/{{project.slug}}">{{project.project_type|safe}}</a></td>
-						<td><a href="/archive/{{project.slug}}">{{project.short_description|safe}}</a></td>
+						<td><a href="/archive/{{project.slug}}">{{project.short_description|safe}}</a>{% if staff %}<a href="/admin/also/article/{{project.pk}}" class="editor" target="_blank">edit</a>{% endif %}</td>
 					</tr>
 					{% endfor %}
 					<tr class="spacer">
@@ -48,6 +48,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="{% static "js/main.min.js" %}"></script>
+	{% include "footer.html" %}
 </body>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
