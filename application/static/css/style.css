@@ -227,7 +227,14 @@ body, html {
     background-position: top center;
     background-size: 100% auto;
     background-attachment: fixed;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 0.35s ease-in-out;
+    -moz-transition: opacity 0.35s ease-in-out;
+    -ms-transition: opacity 0.35s ease-in-out;
+    -o-transition: opacity 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out; }
+    .archivelist .relative .backgroundimage.nonactive {
+      opacity: 0; }
   .archivelist .selected {
     margin-bottom: -1px;
     height: 400px;

@@ -2,7 +2,7 @@ var app = {
 	init: function() {
 		app.smooth.init();
 		app.softInit();
-		app.analyticsInit();
+		// app.analyticsInit();
 	},
 	softInit: function() {
 		if ($(".archiveitem").length) {
@@ -110,12 +110,22 @@ var app = {
 				newImg.addClass("offscreen");
 				newImg.attr("src", newImage);
 				app.mouseOverImage.loading = newImg;
+				document.body.appendChild(newImg[0]);
 				newImg.bind('load', app.mouseOverImage.setImage);
 			}
 		},
 		setImage: function() {
-			app.mouseOverImage.target.css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
-			app.mouseOverImage.loading.attr("src", "");
+			console.log("off screen image ready");
+			console.log($(app.mouseOverImage.target[1]).hasClass("nonactive"));
+			console.log(app.mouseOverImage.loading[0]);
+			if (!$(app.mouseOverImage.target[1]).hasClass("nonactive")) {
+				$(app.mouseOverImage.target[0]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
+				$(app.mouseOverImage.target[1]).addClass("nonactive");
+			} else {
+				$(app.mouseOverImage.target[1]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
+				$(app.mouseOverImage.target[1]).removeClass("nonactive");
+			}
+			document.body.removeChild(app.mouseOverImage.loading[0]);
 		}
 	},
 	indexCarosel: function() {

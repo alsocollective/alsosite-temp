@@ -36,6 +36,10 @@
 		background-size: 100% auto;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
+		@include transition(opacity, 0.35s, ease-in-out );
+		&.nonactive{
+			opacity: 0;
+		}
 	}
 	.selected {
 		margin-bottom: -1px;
