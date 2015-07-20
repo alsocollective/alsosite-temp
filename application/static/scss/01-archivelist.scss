@@ -1,4 +1,8 @@
 .archivelist{
+	svg {
+		height: 120px;
+	}
+	line-height: 1.35em;
 	max-width: 100%;
 	overflow: hidden;
 	ul{
@@ -33,7 +37,7 @@
 	.selected {
 		margin-bottom: -1px;
 		height: 400px;
-		height: 40vh;
+		height: 20vh;
 		li{
 			width: 33%;
 			height: 100%;
@@ -65,7 +69,7 @@
 		text-align: left;
 		background-color: $backgroundOverlay;//rgba(0,0,0,0.75);
 		letter-spacing: .045em;
-		transition: background-color 0.25s;
+		
 		tr:hover{
 			background-color: #fff;
 			transition: background-color 0.25s;
@@ -83,16 +87,18 @@
 				color: $white;
 				text-align: center;
 				text-transform: capitalize;
+				@include font-size(32px);
 			}
 		}
 		tr:first-child{
 			th{
 				padding: 200px 0;
-				padding: 32vh 0;
+				padding: 20vh 0;
 			}
 		}
 		tr{
 			border-bottom: 2px solid #fff;
+			transition: background-color 0.25s;
 		}
 		td{
 			vertical-align: top;

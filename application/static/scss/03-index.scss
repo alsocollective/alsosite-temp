@@ -1,6 +1,5 @@
 .index{
 	width: 100%;
-	// height: 100vh;
 	height: 100%;
 	min-height: 100vh;
 	position: relative;
@@ -10,7 +9,6 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		// background-color: rgba(0,0,0,0.5);
 	}
 	#content{
 		position: relative;
@@ -22,16 +20,22 @@
 		margin: 0 auto;
 		padding-bottom: 0.75em;
 		font-size: 1em;
-		font-weight: normal;
 		text-align: center;
-		letter-spacing: 0.045em;
+
 		color: $white;
+
+		width: 80%;
+		max-width: 700px;
+		min-width: 300px;
+
+		line-height: 1.35em;
+		letter-spacing: 0.03em;
 	}
 	.link{
 		padding: 2em 0;
 		a{
 			display: inline-block;
-			border: 2px solid #fff;
+			border: 1px solid #fff;
 			padding: 0.75em 1.1em;
 			text-transform: uppercase;
 			text-decoration: none;
@@ -46,18 +50,11 @@
 			// @include vendorize(tansition,"background-color 0.35s ease-in-out, color 0.35s ease-in-out");
 		}
 	}
-	.location{
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		a{
-			color: $white;
-			text-decoration: none;
-		}
-	}
+	
 
 	svg{
 		padding: 2em 0 2em 0;
+		height: 120px;
 	}
 	.indeximage{
 		background-position: center;

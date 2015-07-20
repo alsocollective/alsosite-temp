@@ -2,6 +2,7 @@ var app = {
 	init: function() {
 		app.smooth.init();
 		app.softInit();
+		app.analyticsInit();
 	},
 	softInit: function() {
 		if ($(".archiveitem").length) {
@@ -11,7 +12,6 @@ var app = {
 		} else if ($(".index").length) {
 			console.log("index");
 			app.indexCarosel();
-
 		}
 	},
 	smooth: {
@@ -103,7 +103,7 @@ var app = {
 		}
 	},
 	indexCarosel: function() {
-		console.log("slaccck")
+		console.log("slick.js loaded")
 		$("#carosole").slick({
 			autoplay: true,
 			fade: true,

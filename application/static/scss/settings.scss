@@ -1,5 +1,3 @@
-
-
 $small: 480px;
 $medium: 670px;
 $inbetween: 900px;
@@ -7,17 +5,16 @@ $large: 1120px;
 $min: min-width;
 $max: max-width;
 
+$linkColor: #93f;
+
+$base: #fff;
 $black: #333;
-$blue: #33ccff;
-$yellow: #e6dc5a;
-$pink: #ff3399;
-$purp: #9933ff;
 $white: #fff;
 $backgroundOverlay: rgba(0,0,0,0.65);
 
 $width: 90%;
 $indsideWidth: 1200px;
-$min-width:500px;
+$min-width: 500px;
 
 @mixin at-query ($constraint, $viewport1, $viewport2:null) {
 	@if $constraint == $min {
