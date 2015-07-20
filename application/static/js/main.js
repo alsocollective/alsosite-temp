@@ -90,18 +90,11 @@ var app = {
 	mouseOverImage: {
 		target: null,
 		init: function() {
-			console.log("set up");
 			app.mouseOverImage.target = $(".relative .backgroundimage");
 			$("tr").mouseover(app.mouseOverImage.Event);
 		},
 		Event: function(event) {
 			app.mouseOverImage.createLoadingElement(this);
-
-			// var newImage = $(this).data("img")
-			// if (newImage && newImage.indexOf("None") < 0) {
-			// 	console.log($(this).data("img"));
-			// 	app.mouseOverImage.target.css("background-image", "url(" + newImage + ")");
-			// }
 		},
 		createLoadingElement: function(element) {
 			var newImage = $(element).data("img")
@@ -111,13 +104,11 @@ var app = {
 				newImg.attr("src", newImage);
 				app.mouseOverImage.loading = newImg;
 				document.body.appendChild(newImg[0]);
+				newImg.error(app.mouseOverImage.remove);
 				newImg.bind('load', app.mouseOverImage.setImage);
 			}
 		},
 		setImage: function() {
-			console.log("off screen image ready");
-			console.log($(app.mouseOverImage.target[1]).hasClass("nonactive"));
-			console.log(app.mouseOverImage.loading[0]);
 			if (!$(app.mouseOverImage.target[1]).hasClass("nonactive")) {
 				$(app.mouseOverImage.target[0]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
 				$(app.mouseOverImage.target[1]).addClass("nonactive");
@@ -125,11 +116,14 @@ var app = {
 				$(app.mouseOverImage.target[1]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
 				$(app.mouseOverImage.target[1]).removeClass("nonactive");
 			}
-			document.body.removeChild(app.mouseOverImage.loading[0]);
+			$(".offscreen").remove();
+			// document.body.removeChild(app.mouseOverImage.loading[0]);
+		},
+		remove: function() {
+			this.parentNode.removeChild(this);
 		}
 	},
 	indexCarosel: function() {
-		console.log("slick.js loaded")
 		$("#carosole").slick({
 			autoplay: true,
 			fade: true,

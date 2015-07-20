@@ -36,7 +36,11 @@
 		background-size: 100% auto;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
-		@include transition(opacity, 0.35s, ease-in-out );
+		@include at-query ($max, 1200px) {
+			background-size: auto 100%;
+		}
+
+		// @include transition(opacity, 0.35s, ease-in-out );
 		&.nonactive{
 			opacity: 0;
 		}
@@ -77,12 +81,12 @@
 		background-color: $backgroundOverlay;//rgba(0,0,0,0.75);
 		letter-spacing: .045em;
 		
-		tr{
-			@include transition(background-color,0.35s,ease-in-out);
-			a{
-				@include transition(color,0.35s,ease-in-out);
-			}
-		}
+		// tr{
+		// 	@include transition(background-color,0.35s,ease-in-out);
+		// 	a{
+		// 		@include transition(color,0.35s,ease-in-out);
+		// 	}
+		// }
 		tr:hover{
 			background-color: #fff;
 			transition: background-color 0.25s;

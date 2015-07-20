@@ -227,12 +227,10 @@ body, html {
     background-position: top center;
     background-size: 100% auto;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    -webkit-transition: opacity 0.35s ease-in-out;
-    -moz-transition: opacity 0.35s ease-in-out;
-    -ms-transition: opacity 0.35s ease-in-out;
-    -o-transition: opacity 0.35s ease-in-out;
-    transition: opacity 0.35s ease-in-out; }
+    background-repeat: no-repeat; }
+    @media screen and (max-width: 1200px) {
+      .archivelist .relative .backgroundimage {
+        background-size: auto 100%; } }
     .archivelist .relative .backgroundimage.nonactive {
       opacity: 0; }
   .archivelist .selected {
@@ -264,18 +262,6 @@ body, html {
     text-align: left;
     background-color: rgba(0, 0, 0, 0.65);
     letter-spacing: .045em; }
-    .archivelist table tr {
-      -webkit-transition: background-color 0.35s ease-in-out;
-      -moz-transition: background-color 0.35s ease-in-out;
-      -ms-transition: background-color 0.35s ease-in-out;
-      -o-transition: background-color 0.35s ease-in-out;
-      transition: background-color 0.35s ease-in-out; }
-      .archivelist table tr a {
-        -webkit-transition: color 0.35s ease-in-out;
-        -moz-transition: color 0.35s ease-in-out;
-        -ms-transition: color 0.35s ease-in-out;
-        -o-transition: color 0.35s ease-in-out;
-        transition: color 0.35s ease-in-out; }
     .archivelist table tr:hover {
       background-color: #fff;
       transition: background-color 0.25s; }
