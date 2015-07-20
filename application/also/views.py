@@ -301,7 +301,7 @@ from settings import MEDIA_URL
 
 def home(request):
 	return render_to_response("index.html",{
-		"images":ImageNode.objects.all().filter(homepage__gt = 0),
+		"images":ImageNode.objects.all().filter(homepage__gt = 0).order_by('order'),
 		"MEDIA_URL":settings.MEDIA_URL,
 		"staff":request.user.is_staff
 		})
