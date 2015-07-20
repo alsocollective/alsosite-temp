@@ -10,8 +10,7 @@
 	<div id="wrapper" class="animation">
 		<div class="archiveitem">
 
-			<h1>{{current.title}}</h1>
-			<h1>{{MEDIA}}</h1>
+			<h1>{{current.title|safe}}</h1>
 			<p>
 				{{current.text.0.text|safe}}
 			</p>

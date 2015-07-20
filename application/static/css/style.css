@@ -136,7 +136,7 @@ body, html {
   font-size: 17px;
   font-size: 1.0625rem;
   background-color: #000;
-  color: #fff; }
+  color: white; }
 
 #wrapper > div {
   position: relative; }
@@ -157,27 +157,31 @@ body, html {
   padding-bottom: 0.8em;
   padding-top: 1em; }
   .location a {
-    color: #fff;
+    color: white;
     text-decoration: none; }
 
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-moz-keyframes fadeIn {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-o-keyframes fadeIn {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @keyframes fadeIn {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 #wrapper.animation > div {
@@ -243,7 +247,7 @@ body, html {
       color: transparent; }
       .archivelist .selected a:hover {
         background-color: transparent;
-        color: #333; }
+        color: #333333; }
   .archivelist table {
     position: relative;
     width: 100%;
@@ -254,14 +258,14 @@ body, html {
       background-color: #fff;
       transition: background-color 0.25s; }
       .archivelist table tr:hover a {
-        color: #333; }
+        color: #333333; }
     .archivelist table tr.spacer:hover {
       background-color: transparent; }
     .archivelist table .spacer th {
       padding: 100px 0;
       padding: 10vh 0; }
       .archivelist table .spacer th h1 {
-        color: #fff;
+        color: white;
         text-align: center;
         text-transform: capitalize;
         font-size: 32px;
@@ -287,11 +291,13 @@ body, html {
 .archiveitem {
   background-color: #fff;
   padding-top: 200px;
-  padding-top: 6em; }
+  padding-top: 6em;
+  color: #333333; }
   .archiveitem h1 {
-    border-bottom: 2px solid #333;
     display: inline-block;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    font-size: 3em;
+    letter-spacing: 0.025em; }
   .archiveitem .portait, .archiveitem .landscape {
     margin: auto;
     text-align: center;
@@ -333,15 +339,19 @@ body, html {
     max-width: 500px;
     min-width: 300px;
     text-align: left;
-    margin: 0 auto; }
+    margin: 0 auto;
+    line-height: 1.35em; }
   .archiveitem a {
     text-decoration: none;
-    transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s; }
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+    color: inherit;
+    text-decoration: underline; }
     .archiveitem a:hover {
-      color: #93f; }
+      color: #9933ff; }
 
 .index {
   width: 100%;
@@ -364,7 +374,7 @@ body, html {
     padding-bottom: 0.75em;
     font-size: 1em;
     text-align: center;
-    color: #fff;
+    color: white;
     width: 80%;
     max-width: 700px;
     min-width: 300px;
@@ -383,7 +393,7 @@ body, html {
       .index .link a:hover {
         transition: background-color 0.25s;
         background-color: #fff;
-        color: #333; }
+        color: #333333; }
   .index svg {
     padding: 2em 0 2em 0;
     height: 120px; }
@@ -400,5 +410,3 @@ body, html {
         display: block; }
     .index .location {
       position: static; } }
-
-/*# sourceMappingURL=style.css.map */
