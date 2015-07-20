@@ -24,18 +24,19 @@ var app = {
 			app.smooth.body = $('html, body'),
 			app.smooth.content = $('#wrapper').smoothState({
 				onStart: {
-					duration: 500,
+					duration: 2000,
 					render: function($container) {
 						$container.addClass('is-exiting');
 						app.smooth.content.restartCSSAnimations();
-						app.smooth.body.animate({
-							scrollTop: 0
-						});
+
 					}
 				},
 				onReady: {
-					duration: 500,
+					duration: 2000,
 					render: function($container, $newContent) {
+						app.smooth.body.animate({
+							scrollTop: 0
+						}, 0);
 						$container.removeClass('is-exiting');
 						$container.html($newContent);
 						app.smooth.content.restartCSSAnimations();
