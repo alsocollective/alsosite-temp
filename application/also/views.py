@@ -344,7 +344,7 @@ def simpleworklist(request):
 	categories = Category.objects.all()
 	work = categories.filter(slug = "work")
 
-	work = Article.objects.all().order_by('-date').filter(category=work)
+	work = Article.objects.all().order_by('-date').filter(category=work,selected=False)
 	selected = Article.objects.all().order_by('-date').filter(selected=True)
 
 	return render_to_response("archivelist.html",{"work":work,"selected":selected,"MEDIA_URL":settings.MEDIA_URL,"staff":request.user.is_staff})
