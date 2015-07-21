@@ -32,7 +32,7 @@ var app = {
 					}
 				},
 				onReady: {
-					duration: 1000,
+					duration: 1500,
 					render: function($container, $newContent) {
 						app.smooth.body.animate({
 							scrollTop: 0

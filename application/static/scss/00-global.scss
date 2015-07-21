@@ -61,11 +61,11 @@ body,html{
 	}
 }
 #wrapper.animation > div{
-	@include animation('fadeIn 1s forwards');	
+	@include animation('fadeIn 1.5s forwards');	
 }
-#wrapper.animation > .index{
-	@include animation('fadeIn 2s forwards');	
-}
+// #wrapper.animation > .index{
+// 	@include animation('fadeIn 2s forwards');	
+// }
 #wrapper.is-exiting > div {
 	@include animation('fadeIn 0.5s forwards');
 	@include vendorize(animation-direction, alternate-reverse);

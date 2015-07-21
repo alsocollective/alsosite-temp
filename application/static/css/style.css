@@ -195,10 +195,7 @@ body, html {
   100% {
     opacity: 1; } }
 #wrapper.animation > div {
-  -webkit-animation: fadeIn 1s forwards; }
-
-#wrapper.animation > .index {
-  -webkit-animation: fadeIn 2s forwards; }
+  -webkit-animation: fadeIn 1.5s forwards; }
 
 #wrapper.is-exiting > div {
   -webkit-animation: fadeIn 0.5s forwards;
@@ -264,7 +261,8 @@ body, html {
     position: relative;
     width: 100%;
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     letter-spacing: .045em; }
     .archivelist table td {
       position: relative; }
@@ -374,7 +372,8 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #000;
+    background: rgba(0, 0, 0, 0.8);
     display: table;
     text-align: center; }
     .archiveitem .overlay > div {
@@ -452,7 +451,8 @@ body, html {
     position: relative;
     height: 100%;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.65); }
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8); }
   .index h1, .index p {
     margin: 0 auto;
     padding-bottom: 0.75em;

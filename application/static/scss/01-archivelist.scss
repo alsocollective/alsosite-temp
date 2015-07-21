@@ -68,7 +68,8 @@
 		position: relative;
 		width: 100%;
 		text-align: left;
-		background-color: $backgroundOverlay;//rgba(0,0,0,0.75);
+		background-color: #000;
+		background-color: $backgroundOverlay;
 		letter-spacing: .045em;
 		
 		td{
