@@ -16,6 +16,12 @@
 	.relative{
 		position: relative;
 	}
+	>.relative{
+		line-height: 0;
+		> div, >table{
+			line-height: 1.4rem;
+		}
+	}
 	.relative .backgroundimage{
 		position: absolute;
 		top: 0;

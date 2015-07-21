@@ -219,6 +219,10 @@ body, html {
     text-decoration: none; }
   .archivelist .relative {
     position: relative; }
+  .archivelist > .relative {
+    line-height: 0; }
+    .archivelist > .relative > div, .archivelist > .relative > table {
+      line-height: 1.4rem; }
   .archivelist .relative .backgroundimage {
     position: absolute;
     top: 0;
