@@ -416,6 +416,23 @@ body, html {
     position: absolute;
     right: 9000;
     top: 0; }
+  .archiveitem .back {
+    padding: 1rem 0; }
+    .archiveitem .back a {
+      text-decoration: none;
+      padding: 1rem;
+      color: #000;
+      border: solid 2px #000;
+      margin: 1rem;
+      display: inline-block;
+      -webkit-transition: none;
+      -ms-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none; }
+      .archiveitem .back a:hover {
+        background-color: #000;
+        color: white; }
 
 .index {
   width: 100%;

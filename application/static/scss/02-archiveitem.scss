@@ -104,4 +104,21 @@
 		right: 9000;
 		top: 0;
 	}
+
+	.back{
+		padding: 1rem 0;
+		a{
+			text-decoration: none;
+			padding: 1rem;
+			color: #000;
+			border: solid 2px #000;
+			margin: 1rem;
+			display: inline-block;
+			@include vendorize(transition,none);
+			&:hover{
+				background-color: #000;
+				color: $white;
+			}
+		}
+	}
 }
