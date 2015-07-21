@@ -100,11 +100,6 @@
 			color: $linkColor;
 		}
 	}
-	.offscreen{
-		position: absolute;
-		right: 9000;
-		top: 0;
-	}
 
 	.back{
 		padding: 1rem 0;
@@ -122,4 +117,10 @@
 			}
 		}
 	}
+}
+
+.offscreen{
+	position: absolute;
+	right: 9000px;
+	top: 0px;
 }

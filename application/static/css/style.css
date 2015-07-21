@@ -414,10 +414,6 @@ body, html {
     text-decoration: underline; }
     .archiveitem a:hover {
       color: #9933ff; }
-  .archiveitem .offscreen {
-    position: absolute;
-    right: 9000;
-    top: 0; }
   .archiveitem .back {
     padding: 1rem 0; }
     .archiveitem .back a {
@@ -435,6 +431,11 @@ body, html {
       .archiveitem .back a:hover {
         background-color: #000;
         color: white; }
+
+.offscreen {
+  position: absolute;
+  right: 9000px;
+  top: 0px; }
 
 .index {
   width: 100%;

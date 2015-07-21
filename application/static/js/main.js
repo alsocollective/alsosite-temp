@@ -99,7 +99,7 @@ var app = {
 		},
 		createLoadingElement: function(element) {
 			var newImage = $(element).data("img")
-			if (newImage && newImage.indexOf("None") < 0) {
+			if (newImage && newImage.indexOf("None") < 0 && !$("offscreen").length) {
 				newImg = $(document.createElement("img"));
 				newImg.addClass("offscreen");
 				newImg.attr("src", newImage);
