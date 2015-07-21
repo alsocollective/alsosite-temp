@@ -7,7 +7,7 @@ var app = {
 	softInit: function() {
 		if ($(".archiveitem").length) {
 			app.aItem.init();
-		} else if ($(".archivelist").length) {
+		} else if ($(".archivelist").length && $(".no-touch").length) {
 			app.mouseOverImage.init()
 		} else if ($(".index").length) {
 			console.log("index");

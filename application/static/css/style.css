@@ -254,9 +254,6 @@ body, html {
     .archivelist .selected a {
       background-color: rgba(0, 0, 0, 0.25);
       color: transparent; }
-      .archivelist .selected a:hover {
-        background-color: transparent;
-        color: #333333; }
   .archivelist table {
     position: relative;
     width: 100%;
@@ -274,14 +271,6 @@ body, html {
         height: auto;
         background-color: #000;
         padding: 0; }
-        .archivelist table td .editor:hover {
-          color: #fff; }
-    .archivelist table tr:hover {
-      background-color: #fff; }
-      .archivelist table tr:hover a {
-        color: #333333; }
-    .archivelist table tr.spacer:hover {
-      background-color: transparent; }
     .archivelist table .spacer th {
       padding: 100px 0;
       padding: 10vh 0;
@@ -347,6 +336,13 @@ body, html {
 @media screen and (max-width: 1120px) {
   .touch .archivelist .backgroundimage {
     display: none; } }
+
+.no-touch table tr:hover {
+  background-color: #fff; }
+  .no-touch table tr:hover a {
+    color: #333333; }
+.no-touch table tr.spacer:hover {
+  background-color: transparent; }
 
 .archiveitem {
   background-color: #fff;
