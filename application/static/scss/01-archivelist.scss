@@ -98,7 +98,15 @@
 		.spacer th{
 			padding: 100px 0;
 			padding: 10vh 0;
+			text-align: center;
 			h1{
+				color: $white;
+				text-align: center;
+				text-transform: capitalize;
+				font-weight: bolder;
+				@include font-size(32px);
+			}
+			h2{
 				color: $white;
 				text-align: center;
 				text-transform: capitalize;

@@ -283,8 +283,16 @@ body, html {
       background-color: transparent; }
     .archivelist table .spacer th {
       padding: 100px 0;
-      padding: 10vh 0; }
+      padding: 10vh 0;
+      text-align: center; }
       .archivelist table .spacer th h1 {
+        color: white;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bolder;
+        font-size: 32px;
+        font-size: 2rem; }
+      .archivelist table .spacer th h2 {
         color: white;
         text-align: center;
         text-transform: capitalize;
