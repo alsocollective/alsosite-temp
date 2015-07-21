@@ -12,6 +12,7 @@ body,html{
 
 	background-color: #000;
 	color: $base;
+	-webkit-overflow-scrolling: touch;
 }
 
 #wrapper > div{
@@ -35,9 +36,19 @@ body,html{
 		width: 100%;
 		padding-bottom: 0.8em;
 		padding-top: 1em;
+		line-height: 1.4rem;
 		a{
 			color: $white;
 			text-decoration: none;
+		}
+		@include at-query ($max, $inbetween) {
+			font-size: 0rem;
+			line-height: 0;
+			a{
+				font-size: 1rem;
+				line-height: 1.4rem;
+				display: block;
+			}
 		}
 	}
 

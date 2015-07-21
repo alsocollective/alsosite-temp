@@ -136,7 +136,8 @@ body, html {
   font-size: 17px;
   font-size: 1.0625rem;
   background-color: #000;
-  color: white; }
+  color: white;
+  -webkit-overflow-scrolling: touch; }
 
 #wrapper > div {
   position: relative; }
@@ -155,10 +156,19 @@ body, html {
   bottom: 0;
   width: 100%;
   padding-bottom: 0.8em;
-  padding-top: 1em; }
+  padding-top: 1em;
+  line-height: 1.4rem; }
   .location a {
     color: white;
     text-decoration: none; }
+  @media screen and (max-width: 900px) {
+    .location {
+      font-size: 0rem;
+      line-height: 0; }
+      .location a {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        display: block; } }
 
 @-webkit-keyframes fadeIn {
   0% {
@@ -204,15 +214,6 @@ body, html {
     display: block;
     margin: 0 auto;
     padding-bottom: 4em; }
-  .archivelist ul {
-    width: 100%;
-    text-align: left;
-    margin: 0 auto; }
-  .archivelist li {
-    display: inline-block;
-    width: 23%;
-    padding-left: 10%;
-    vertical-align: top; }
   .archivelist a {
     color: black;
     text-decoration: none; }
@@ -306,6 +307,37 @@ body, html {
       height: 100%;
       display: inline-block;
       color: #fff; }
+  @media screen and (max-width: 900px) {
+    .archivelist table {
+      display: inline-block; }
+      .archivelist table tr {
+        display: block; }
+      .archivelist table td {
+        display: inline-block;
+        width: 100%; }
+        .archivelist table td a {
+          padding: 0.5rem 1rem 0 1rem; }
+        .archivelist table td:first-child {
+          font-weight: bolder; }
+        .archivelist table td:nth-child(2) {
+          margin: -0.35rem 0; }
+          .archivelist table td:nth-child(2) a {
+            font-size: 0.8rem;
+            padding-top: 0rem; }
+        .archivelist table td:last-child {
+          width: 100%; }
+          .archivelist table td:last-child a {
+            padding: 0rem 1rem 1rem 1rem; }
+        .archivelist table td .editor {
+          left: inherit;
+          right: 0; }
+      .archivelist table .spacer th {
+        margin: 0 auto;
+        display: block; } }
+
+@media screen and (max-width: 1120px) {
+  .touch .archivelist .backgroundimage {
+    display: none; } }
 
 .archiveitem {
   background-color: #fff;
@@ -323,7 +355,8 @@ body, html {
     position: relative;
     padding: 5vh 0; }
     .archiveitem .portait img, .archiveitem .landscape img {
-      max-height: 80vh; }
+      max-height: 80vh;
+      max-width: 100%; }
   .archiveitem .overlay {
     width: 100%;
     height: 100%;

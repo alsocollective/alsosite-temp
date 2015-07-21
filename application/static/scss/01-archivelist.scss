@@ -8,17 +8,7 @@
 	line-height: 1.35em;
 	max-width: 100%;
 	overflow: hidden;
-	ul{
-		width: 100%;
-		text-align: left;
-		margin: 0 auto;
-	}
-	li{
-		display: inline-block;
-		width: 23%;
-		padding-left: 10%;
-		vertical-align: top;
-	}
+
 	a{
 		color: black;
 		text-decoration: none;
@@ -81,12 +71,6 @@
 		background-color: $backgroundOverlay;//rgba(0,0,0,0.75);
 		letter-spacing: .045em;
 		
-		// tr{
-		// 	@include transition(background-color,0.35s,ease-in-out);
-		// 	a{
-		// 		@include transition(color,0.35s,ease-in-out);
-		// 	}
-		// }
 		td{
 			position: relative;
 			.editor{
@@ -104,7 +88,6 @@
 		}
 		tr:hover{
 			background-color: #fff;
-			// transition: background-color 0.25s;
 			a{
 				color: $black;
 			}
@@ -149,4 +132,55 @@
 
 		}
 	}
+
+	@include at-query ($max, $inbetween) {
+		table{
+			display: inline-block;
+			tr{
+				display: block;
+			}
+			td{
+				display: inline-block;
+				width: 100%;
+				// text-align: center;
+				a {
+					padding: 0.5rem 1rem 0 1rem;
+				}
+				&:first-child{
+					font-weight: bolder;
+				}
+				&:nth-child(2){
+					margin: -0.35rem 0;
+					a{
+						font-size: 0.8rem;
+						padding-top: 0rem;
+					}
+				}
+				&:last-child{
+					// text-align: left;
+					width: 100%;
+					a{
+						padding: 0rem 1rem 1rem 1rem;
+					}
+				}
+				.editor{
+					left: inherit;
+					right: 0;
+				}
+			}
+			.spacer th{
+				margin: 0 auto;
+				display: block;
+			}
+		}
+	}
+}
+
+.touch .archivelist{
+
+	@include at-query ($max, $large) {
+		.backgroundimage{
+			display: none;
+		}
+	}	
 }
