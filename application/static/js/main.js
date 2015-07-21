@@ -24,7 +24,7 @@ var app = {
 			app.smooth.body = $('html, body'),
 			app.smooth.content = $('#wrapper').smoothState({
 				onStart: {
-					duration: 2000,
+					duration: 500,
 					render: function($container) {
 						$container.addClass('is-exiting');
 						app.smooth.content.restartCSSAnimations();
@@ -32,7 +32,7 @@ var app = {
 					}
 				},
 				onReady: {
-					duration: 2000,
+					duration: 1000,
 					render: function($container, $newContent) {
 						app.smooth.body.animate({
 							scrollTop: 0

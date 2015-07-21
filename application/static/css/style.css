@@ -195,10 +195,13 @@ body, html {
   100% {
     opacity: 1; } }
 #wrapper.animation > div {
+  -webkit-animation: fadeIn 1s forwards; }
+
+#wrapper.animation > .index {
   -webkit-animation: fadeIn 2s forwards; }
 
 #wrapper.is-exiting > div {
-  -webkit-animation: fadeIn 2s forwards;
+  -webkit-animation: fadeIn 0.5s forwards;
   -webkit-animation-direction: alternate-reverse;
   -ms-animation-direction: alternate-reverse;
   -moz-animation-direction: alternate-reverse;
