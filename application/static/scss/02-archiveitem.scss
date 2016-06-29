@@ -2,7 +2,7 @@
 	background-color: #fff;
 	padding-top: 200px;
 	padding-top: 6em;
-	color: $black;
+	color: $red;
 
 	h1{
 		// border-bottom: 2px solid $black;
@@ -106,13 +106,13 @@
 		a{
 			text-decoration: none;
 			padding: 1rem;
-			color: #000;
-			border: solid 2px #000;
+			color: $base;
+			border: solid 2px $green;
 			margin: 1rem;
 			display: inline-block;
 			@include vendorize(transition,none);
 			&:hover{
-				background-color: #000;
+				background-color: $green;
 				color: $white;
 			}
 		}

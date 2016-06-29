@@ -3,14 +3,15 @@ body,html{
 	margin:0;
 	width:100%;
 
-	font-family:"Relative Book", 'Century Gothic', Verdana, sans-serif; font-size-adjust:0.5; font-weight:normal; font-style:normal;
-
+	// font-family:"Relative Book", 'Century Gothic', Verdana, sans-serif; font-size-adjust:0.5; font-weight:normal; font-style:normal;
+	
+	font-family: 'Roboto', sans-serif;	
 	text-align: center;
 
 	@include antialias;
 	@include font-size(17px);
 
-	background-color: #000;
+	// background-color: #000;
 	color: $base;
 	-webkit-overflow-scrolling: touch;
 }
@@ -37,8 +38,9 @@ body,html{
 		padding-bottom: 0.8em;
 		padding-top: 1em;
 		line-height: 1.4rem;
+		color: $base;
 		a{
-			color: $white;
+			color: $red;
 			text-decoration: none;
 		}
 		@include at-query ($max, $inbetween) {

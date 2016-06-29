@@ -6,7 +6,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'also.views.home', name='home'),
+    
+    url(r'^$', 'also.views.simpleworklist', name='home'),
+    # url(r'^$', 'also.views.home', name='home'),
+
+
     # url(r'ajax/work/', 'also.views.home', name='work'),
     # url(r'ajax/about/', 'also.views.newAbout', name='work'),
     # url(r'ajax/process/', 'also.views.newProcess', name='process'),

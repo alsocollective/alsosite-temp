@@ -300,6 +300,7 @@ from settings import MEDIA_URL
 
 
 def home(request):
+	# return HttpResponse("hello wolrd")
 	return render_to_response("index.html",{
 		"images":ImageNode.objects.all().filter(homepage__gt = 0).order_by('homepage'),
 		"MEDIA_URL":settings.MEDIA_URL,

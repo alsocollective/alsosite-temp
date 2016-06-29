@@ -8,11 +8,12 @@ var app = {
 		if ($(".archiveitem").length) {
 			app.aItem.init();
 		} else if ($(".archivelist").length && $(".no-touch").length) {
-			app.mouseOverImage.init()
-		} else if ($(".index").length) {
-			console.log("index");
-			app.indexCarosel();
-		}
+			// app.mouseOverImage.init()
+		} 
+		// else if ($(".index").length) {
+		// 	console.log("index");
+		// 	app.indexCarosel();
+		// }
 	},
 	smooth: {
 		init: function() {
@@ -22,31 +23,31 @@ var app = {
 		},
 		setup: function() {
 			app.smooth.body = $('html, body'),
-			app.smooth.content = $('#wrapper').smoothState({
-				onStart: {
-					duration: 500,
-					render: function($container) {
-						$container.addClass('is-exiting');
-						app.smooth.content.restartCSSAnimations();
+				app.smooth.content = $('#wrapper').smoothState({
+					onStart: {
+						duration: 500,
+						render: function($container) {
+							$container.addClass('is-exiting');
+							app.smooth.content.restartCSSAnimations();
 
-					}
-				},
-				onReady: {
-					duration: 1500,
-					render: function($container, $newContent) {
-						app.smooth.body.animate({
-							scrollTop: 0
-						}, 0);
-						$container.removeClass('is-exiting');
-						$container.html($newContent);
-						app.smooth.content.restartCSSAnimations();
-					}
-				},
-				onAfter: function(url, $container, $content) {
-					app.softInit();
-				},
-				blacklist: '.no-smoothState'
-			}).data('smoothState');
+						}
+					},
+					onReady: {
+						duration: 1500,
+						render: function($container, $newContent) {
+							app.smooth.body.animate({
+								scrollTop: 0
+							}, 0);
+							$container.removeClass('is-exiting');
+							$container.html($newContent);
+							app.smooth.content.restartCSSAnimations();
+						}
+					},
+					onAfter: function(url, $container, $content) {
+						app.softInit();
+					},
+					blacklist: '.no-smoothState'
+				}).data('smoothState');
 		}
 	},
 	aItem: {
@@ -88,42 +89,42 @@ var app = {
 			this.parentNode.removeChild(this);
 		}
 	},
-	mouseOverImage: {
-		target: null,
-		init: function() {
-			app.mouseOverImage.target = $(".relative .backgroundimage");
-			$("tr").mouseover(app.mouseOverImage.Event);
-		},
-		Event: function(event) {
-			app.mouseOverImage.createLoadingElement(this);
-		},
-		createLoadingElement: function(element) {
-			var newImage = $(element).data("img")
-			if (newImage && newImage.indexOf("None") < 0 && !$("offscreen").length) {
-				newImg = $(document.createElement("img"));
-				newImg.addClass("offscreen");
-				newImg.attr("src", newImage);
-				app.mouseOverImage.loading = newImg;
-				document.body.appendChild(newImg[0]);
-				newImg.error(app.mouseOverImage.remove);
-				newImg.bind('load', app.mouseOverImage.setImage);
-			}
-		},
-		setImage: function() {
-			if (!$(app.mouseOverImage.target[1]).hasClass("nonactive")) {
-				$(app.mouseOverImage.target[0]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
-				$(app.mouseOverImage.target[1]).addClass("nonactive");
-			} else {
-				$(app.mouseOverImage.target[1]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
-				$(app.mouseOverImage.target[1]).removeClass("nonactive");
-			}
-			$(".offscreen").remove();
-			// document.body.removeChild(app.mouseOverImage.loading[0]);
-		},
-		remove: function() {
-			this.parentNode.removeChild(this);
-		}
-	},
+	// mouseOverImage: {
+	// 	target: null,
+	// 	init: function() {
+	// 		// app.mouseOverImage.target = $(".relative .backgroundimage");
+	// 		// $("tr").mouseover(app.mouseOverImage.Event);
+	// 	},
+	// 	Event: function(event) {
+	// 		app.mouseOverImage.createLoadingElement(this);
+	// 	},
+	// 	createLoadingElement: function(element) {
+	// 		var newImage = $(element).data("img")
+	// 		if (newImage && newImage.indexOf("None") < 0 && !$("offscreen").length) {
+	// 			newImg = $(document.createElement("img"));
+	// 			newImg.addClass("offscreen");
+	// 			newImg.attr("src", newImage);
+	// 			app.mouseOverImage.loading = newImg;
+	// 			document.body.appendChild(newImg[0]);
+	// 			newImg.error(app.mouseOverImage.remove);
+	// 			newImg.bind('load', app.mouseOverImage.setImage);
+	// 		}
+	// 	},
+	// 	setImage: function() {
+	// 		if (!$(app.mouseOverImage.target[1]).hasClass("nonactive")) {
+	// 			$(app.mouseOverImage.target[0]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
+	// 			$(app.mouseOverImage.target[1]).addClass("nonactive");
+	// 		} else {
+	// 			$(app.mouseOverImage.target[1]).css("background-image", "url(" + app.mouseOverImage.loading[0].src + ")");
+	// 			$(app.mouseOverImage.target[1]).removeClass("nonactive");
+	// 		}
+	// 		$(".offscreen").remove();
+	// 		// document.body.removeChild(app.mouseOverImage.loading[0]);
+	// 	},
+	// 	remove: function() {
+	// 		this.parentNode.removeChild(this);
+	// 	}
+	// },
 	indexCarosel: function() {
 		$("#carosole").slick({
 			autoplay: true,
