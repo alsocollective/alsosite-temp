@@ -43,7 +43,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'seo/sitemap\.xml', 'also.views.sitemap', name="sitemap"),
+    url(r'sitemap\.xml', 'also.views.sitemap', name="sitemap"),
 )
 
 from django.conf import settings
